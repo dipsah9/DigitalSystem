@@ -1,92 +1,82 @@
 What is a System?
-    => System is group of components and its functionaliy. 
+A system is a group of components that work together to perform a specific functionality.
 
-System Structure:   G =   (C,L) where C is components and L is Connection. 
-Components = {C0, C1 ..... CN}
-Connectionn = {L1, L2, .... LN}
+System Structure:
+A system can be represented as:
+G = (C, L)
+Where:
+- C is the set of components, e.g., {C0, C1, ..., CN}.
+- L is the set of connections, e.g., {L1, L2, ..., LN}.
 
-What does a function means actually?
-    For example we want to build a calculator. What are the steps?
-First we have to find out which function should our calculator should posses. such as addition , substraction,
-multiply and division. And also we have to figure out how many parameters it can take total. 
-For now just say we want to make one basic calculator that can perform these operations using two inputs. 
+What is a Function?
+A function defines a specific operation that a system can perform, based on inputs. For example, in a basic calculator:
 
-Then we have define the function. Like as follows: 
-    f(Sum) = a + b
-    f(mult) = a * b
-    f(div) = a / b
-    f(sub) = a - b
+1. Analysis:
+   We identify the operations our calculator should support (e.g., addition, subtraction, multiplication, division). For each operation, we define the inputs and outputs. For now, we'll use two inputs for simplicity.
 
-So from the function only we can see that. There is different components we need to take care of. 
-such as input and operators.
+2. Synthesis:
+   Design the system to perform the operations based on the analysis. For instance:
+   - f(sum) = a + b
+   - f(multiply) = a * b
+   - f(divide) = a / b
+   - f(subtract) = a - b
 
-Any system we desing consists Structure and behaviour. Structure means , how is the system built and behaviour
-means for what function we built that system. There is input and output which helps us to determine the design of 
-the system. 
+From these functions, we can determine the necessary components: inputs, operators, and outputs.
 
-It includes following steps: 
-    Analysis: 
-        Determine the behaviour of the given system. How is that system should be built actually. 
+System Design: Structure and Behavior
+A system consists of:
+- Structure: How the system is built (components and connections).
+- Behavior: What functionality the system performs, i.e., the purpose of the system, which is defined by the functions it supports.
 
-    Synthesis: 
-        Design a system that determine or gives the output on the basis of our Analysis.
+Steps in System Design
+1. Analysis: Understand and determine the required behavior of the system (what the system should do).
+2. Synthesis: Design and construct the system to achieve the desired output based on the analysis.
 
-Lets go ahead. 
-    Now we are at  code and codewords. 
-    Lets talk about binay codes. 
-        given is the binary code upto 6. 
-            0 = 000
-            1 = 001
-            2 = 010
-            3 = 011
-            4 = 100
-            5 = 101
-            6 = 110
+Binary Codes
 
-Relation between codes:
-    The number of symbols: n
-    Number of binary decisions: m
+Given binary code representations for the numbers 0-6:
+- 0 = 000
+- 1 = 001
+- 2 = 010
+- 3 = 011
+- 4 = 100
+- 5 = 101
+- 6 = 110
 
-    n < 2 to the power m 
-    m = (log2n) round down
+Relationship between Codes:
+- n is the number of symbols.
+- m is the number of binary decisions (bits).
+- The relationship is:
+  n < 2^m
+  And,
+  m = floor(log2(n))
 
-    Number of possible code: k = M! /(M-n) !
+Number of Possible Codes:
+The number of possible code words is given by:
+k = M! / (M-n)!
 
-Presentation of whole numbers in binary. 
-We have following four methods. 
+Presentation of Whole Numbers in Binary
+There are several methods to represent whole numbers in binary, including:
 
-1) Offset Presentation: 
-        In this we have offset which we use to represent positive and negative numbers. 
-    Just say we want to represent to whole number using 4 bit. Lets see how many numbers can fit. 
-    So we have four bits that means we can represent 2 to the power 4 means = 16 numbers altogether. 
-    But how will we start ? 0000 represent 0. but to represent all the number we will divide 16 by 2 it means 8
-    so from 0 to 15 we will substract 8. And our table of whole number will be ready. 
-    lets do it. 
+1. Offset Binary Representation
+In this method, we subtract a fixed offset (often half of the total range) to represent both positive and negative numbers. For example, with 4 bits, you can represent 16 possible values, from -8 to 7.
 
-    We have four digits. that means = we have to substract by 8
-    0000 = 0 = 0-8 = -8
-    0001 = 1 = 1-8 = -7
-    0010 = 2 = 2-8 = -6
-    0011 = 3 = 3-8 = -5
-    0100 = 4 = 4-8 = -4
-    0101 = 5 = 5-8 = -3 
-    0110 = 6 = 6-8 = -2
-    ...................
-    ...................
-    ...................
-    1111 = 15 = 15-8 = 7
-This is how we can represent numbers using this offset Presentation. 
+Example for offset representation with 4 bits (subtracting 8 from the value):
+- 0000 = 0 - 8 = -8
+- 0001 = 1 - 8 = -7
+- 0010 = 2 - 8 = -6
+- ...
+- 1111 = 15 - 8 = 7
 
-2)Signed Bit 
-    In this we use 0 to represent + sign  and 1 to represent - sign. 
-    But here also we have some issues. 
-    Lets make a table. 
-    000
-    001
-    010
-    011
-    100
-    101
-    110
-    111
+2. Signed Bit Representation
+In signed bit representation, the most significant bit (MSB) is used to indicate the sign:
+- 0 for positive values
+- 1 for negative values
 
+However, there’s a problem: you get two representations of zero (+0 and -0), which can cause complications in implementation.
+
+3. One's Complement
+This method involves flipping all the bits to represent negative numbers. The major issue with one's complement is that it also represents two versions of zero: +0 and -0, which causes problems both in arithmetic operations and in software/hardware implementation.
+
+4. Two's Complement
+This is the most common and modern binary representation. In two's complement, negative numbers are represented by inverting the bits of the number's positive equivalent and adding 1. The key advantage is that there's only one representation for zero, making it simpler to implement and perform arithmetic operations.
