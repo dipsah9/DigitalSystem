@@ -1,0 +1,92 @@
+What is a System?
+    => System is group of components and its functionaliy. 
+
+System Structure:   G =   (C,L) where C is components and L is Connection. 
+Components = {C0, C1 ..... CN}
+Connectionn = {L1, L2, .... LN}
+
+What does a function means actually?
+    For example we want to build a calculator. What are the steps?
+First we have to find out which function should our calculator should posses. such as addition , substraction,
+multiply and division. And also we have to figure out how many parameters it can take total. 
+For now just say we want to make one basic calculator that can perform these operations using two inputs. 
+
+Then we have define the function. Like as follows: 
+    f(Sum) = a + b
+    f(mult) = a * b
+    f(div) = a / b
+    f(sub) = a - b
+
+So from the function only we can see that. There is different components we need to take care of. 
+such as input and operators.
+
+Any system we desing consists Structure and behaviour. Structure means , how is the system built and behaviour
+means for what function we built that system. There is input and output which helps us to determine the design of 
+the system. 
+
+It includes following steps: 
+    Analysis: 
+        Determine the behaviour of the given system. How is that system should be built actually. 
+
+    Synthesis: 
+        Design a system that determine or gives the output on the basis of our Analysis.
+
+Lets go ahead. 
+    Now we are at  code and codewords. 
+    Lets talk about binay codes. 
+        given is the binary code upto 6. 
+            0 = 000
+            1 = 001
+            2 = 010
+            3 = 011
+            4 = 100
+            5 = 101
+            6 = 110
+
+Relation between codes:
+    The number of symbols: n
+    Number of binary decisions: m
+
+    n < 2 to the power m 
+    m = (log2n) round down
+
+    Number of possible code: k = M! /(M-n) !
+
+Presentation of whole numbers in binary. 
+We have following four methods. 
+
+1) Offset Presentation: 
+        In this we have offset which we use to represent positive and negative numbers. 
+    Just say we want to represent to whole number using 4 bit. Lets see how many numbers can fit. 
+    So we have four bits that means we can represent 2 to the power 4 means = 16 numbers altogether. 
+    But how will we start ? 0000 represent 0. but to represent all the number we will divide 16 by 2 it means 8
+    so from 0 to 15 we will substract 8. And our table of whole number will be ready. 
+    lets do it. 
+
+    We have four digits. that means = we have to substract by 8
+    0000 = 0 = 0-8 = -8
+    0001 = 1 = 1-8 = -7
+    0010 = 2 = 2-8 = -6
+    0011 = 3 = 3-8 = -5
+    0100 = 4 = 4-8 = -4
+    0101 = 5 = 5-8 = -3 
+    0110 = 6 = 6-8 = -2
+    ...................
+    ...................
+    ...................
+    1111 = 15 = 15-8 = 7
+This is how we can represent numbers using this offset Presentation. 
+
+2)Signed Bit 
+    In this we use 0 to represent + sign  and 1 to represent - sign. 
+    But here also we have some issues. 
+    Lets make a table. 
+    000
+    001
+    010
+    011
+    100
+    101
+    110
+    111
+
